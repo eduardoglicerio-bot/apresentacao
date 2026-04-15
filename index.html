@@ -19,7 +19,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -268,6 +267,43 @@
       margin-bottom: 0;
     }
 
+    .media-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .media-box img {
+      width: 100%;
+      max-width: 780px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .media-caption {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 0.98rem;
+    }
+
+    .video-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 420px;
+      display: block;
+    }
+
     footer {
       padding: 30px 0 60px;
       color: var(--muted);
@@ -279,7 +315,6 @@
       padding-top: 18px;
     }
 
-    /* Avatar */
     .avatar-box {
       position: fixed;
       right: 20px;
@@ -293,13 +328,13 @@
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 20px;
       padding: 14px;
-      width: 120px;
+      width: 130px;
       box-shadow: var(--shadow);
     }
 
     .avatar-face {
-      width: 72px;
-      height: 72px;
+      width: 74px;
+      height: 74px;
       border-radius: 50%;
       margin: 0 auto 10px;
       background: radial-gradient(circle at 30% 30%, #6ed0ff, #2b5fff);
@@ -347,6 +382,10 @@
         align-items: flex-start;
       }
 
+      .video-wrapper iframe {
+        height: 240px;
+      }
+
       .avatar-box {
         right: 12px;
         bottom: 12px;
@@ -368,7 +407,10 @@
           <a href="#modelo">Modelo</a>
           <a href="#metodo">Método</a>
           <a href="#resultados">Resultados</a>
-          <a href="#aplicacoes">Aplicações</a>
+          <a href="#figuras">Figuras</a>
+          <a href="#video">Vídeo</a>
+          <a href="#projeto">Projeto</a>
+          <a href="#graficos">Gráficos</a>
         </div>
       </nav>
     </div>
@@ -556,13 +598,77 @@
           </p>
         </article>
       </div>
+    </section>
 
-      <div class="figure-box" style="margin-top:18px;">
-        <h3 style="margin-top:0;">Espaço para seus gráficos</h3>
-        <p>
-          Aqui você pode depois inserir imagens dos gráficos do Colab, resultados do seu experimento
-          e comparações entre cenários de plasma e produção de NOx.
-        </p>
+    <section id="figuras">
+      <h2 class="section-title">Figuras do artigo</h2>
+      <p class="section-subtitle">
+        Aqui você pode destacar figuras importantes da apresentação e do artigo para facilitar a compreensão visual.
+      </p>
+
+      <div class="media-box">
+        <img src="figura1.png" alt="Figura principal do artigo">
+        <div class="media-caption">
+          Figura 1 — Substitua este arquivo por uma imagem extraída do artigo ou da sua apresentação.
+        </div>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2 class="section-title">Visualização da descarga</h2>
+      <p class="section-subtitle">
+        Você pode incorporar um vídeo do YouTube para mostrar visualmente o fenômeno da descarga glow ou uma explicação complementar.
+      </p>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+          title="Vídeo sobre descarga glow"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section id="projeto">
+      <h2 class="section-title">Aplicação no meu projeto</h2>
+      <p class="section-subtitle">
+        Este estudo está sendo utilizado como base para meu projeto de mestrado,
+        focado na geração de espécies reativas, especialmente NOx, por descargas elétricas em plasma.
+      </p>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Objetivo</h3>
+          <p>
+            Investigar a produção de óxidos de nitrogênio a partir do ar atmosférico
+            utilizando descargas elétricas e analisar sua possível aplicação em sistemas
+            de fertilização e processos sustentáveis.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Metodologia</h3>
+          <p>
+            Combinação de modelagem teórica, interpretação de artigos, simulação em Python
+            e organização experimental para avaliar custo, eficiência e viabilidade do sistema.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="graficos">
+      <h2 class="section-title">Gráficos e resultados do Colab</h2>
+      <p class="section-subtitle">
+        Esta área pode ser usada para inserir os gráficos gerados nas suas simulações e comparações de cenários.
+      </p>
+
+      <div class="media-box">
+        <img src="grafico1.png" alt="Gráfico gerado no Colab">
+        <div class="media-caption">
+          Gráfico 1 — Substitua este arquivo por um gráfico exportado do seu Colab.
+        </div>
       </div>
     </section>
 
@@ -581,7 +687,8 @@
             <li>Apresenta o tema de forma clara</li>
             <li>Resume seções do artigo</li>
             <li>Organiza conteúdo para leitura rápida</li>
-            <li>Está pronta para ser publicada no GitHub Pages</li>
+            <li>Integra figuras, vídeo e gráficos</li>
+            <li>Está pronta para ser evoluída</li>
           </ul>
         </article>
 
@@ -589,10 +696,10 @@
           <h3>O que você pode adicionar depois</h3>
           <ul>
             <li>PDF do artigo</li>
-            <li>Imagens da sua apresentação</li>
-            <li>Gráficos do Colab</li>
-            <li>Seção sobre experimento com plasma e NOx</li>
-            <li>Resultados do seu mestrado</li>
+            <li>Mais imagens da sua apresentação</li>
+            <li>Mais gráficos do Colab</li>
+            <li>Seção sobre o experimento com plasma e NOx</li>
+            <li>Simulações interativas e avatar avançado</li>
           </ul>
         </article>
       </div>
