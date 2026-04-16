@@ -620,16 +620,33 @@
     Você pode incorporar um vídeo do YouTube para mostrar visualmente o fenômeno da descarga glow ou uma explicação complementar.
   </p>
 
-  <div class="video-wrapper">
-    <iframe 
+<div class="video-wrapper">
+  <a href="https://www.youtube.com/watch?v=yDAv_LpN00c" target="_blank" style="display:block; position:relative;">
+    <img 
+      src="https://img.youtube.com/vi/yDAv_LpN00c/maxresdefault.jpg" 
       width="100%" 
-      height="400"
-	  src="https://www.youtube-nocookie.com/embed/yDAv_LpN00c?rel=0"
-	  frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
+      style="border-radius:8px; cursor:pointer;"
+      alt="Clique para assistir o vídeo"
+    />
+    <!-- Botão play no centro -->
+    <div style="
+      position:absolute; top:50%; left:50%; 
+      transform:translate(-50%,-50%);
+      width:70px; height:70px; border-radius:50%;
+      background:rgba(255,0,0,0.85);
+      display:flex; align-items:center; justify-content:center;
+    ">
+      <div style="
+        width:0; height:0;
+        border-top:18px solid transparent;
+        border-bottom:18px solid transparent;
+        border-left:30px solid white;
+        margin-left:6px;
+      "></div>
+    </div>
+  </a>
+</div>
+  </section>
     <section id="projeto">
       <h2 class="section-title">Aplicação no meu projeto</h2>
       <p class="section-subtitle">
