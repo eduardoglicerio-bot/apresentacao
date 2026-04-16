@@ -291,17 +291,70 @@
       font-size: 0.98rem;
     }
 
+    /* Video thumbnail styles */
     .video-wrapper {
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
+      position: relative;
     }
 
-    .video-wrapper iframe {
-      width: 100%;
-      height: 420px;
+    .video-thumb-link {
       display: block;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .video-thumb-link img {
+      width: 100%;
+      display: block;
+      border-radius: 0;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .video-thumb-link:hover img {
+      filter: brightness(0.85);
+    }
+
+    .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(220, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease, background 0.2s ease;
+      pointer-events: none;
+    }
+
+    .video-thumb-link:hover .play-btn {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: rgba(255, 0, 0, 1);
+    }
+
+    .play-arrow {
+      width: 0;
+      height: 0;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 34px solid white;
+      margin-left: 7px;
+    }
+
+    .video-label {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 10px 0 4px;
+      background: rgba(255,255,255,0.03);
     }
 
     footer {
@@ -380,10 +433,6 @@
       nav {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .video-wrapper iframe {
-        height: 240px;
       }
 
       .avatar-box {
@@ -613,39 +662,27 @@
         </div>
       </div>
     </section>
-		<section id="video">
-  <h2 class="section-title">Visualização da descarga</h2>
-  <p class="section-subtitle">
-    Você pode incorporar um vídeo do YouTube para mostrar visualmente o fenômeno da descarga glow ou uma explicação complementar.
-  </p>
 
-<div class="video-wrapper">
-  <a href="https://www.youtube.com/watch?v=yDAv_LpN00c" target="_blank" style="display:block; position:relative;">
-    <img 
-      src="https://img.youtube.com/vi/yDAv_LpN00c/maxresdefault.jpg" 
-      width="100%" 
-      style="border-radius:8px; cursor:pointer;"
-      alt="Clique para assistir o vídeo"
-    />
-    <!-- Botão play no centro -->
-    <div style="
-      position:absolute; top:50%; left:50%; 
-      transform:translate(-50%,-50%);
-      width:70px; height:70px; border-radius:50%;
-      background:rgba(255,0,0,0.85);
-      display:flex; align-items:center; justify-content:center;
-    ">
-      <div style="
-        width:0; height:0;
-        border-top:18px solid transparent;
-        border-bottom:18px solid transparent;
-        border-left:30px solid white;
-        margin-left:6px;
-      "></div>
-    </div>
-  </a>
-</div>
-  </section>
+    <section id="video">
+      <h2 class="section-title">Visualização da descarga</h2>
+      <p class="section-subtitle">
+        Clique na imagem abaixo para assistir ao vídeo sobre a descarga glow no YouTube.
+      </p>
+
+      <div class="video-wrapper">
+        <a class="video-thumb-link" href="https://www.youtube.com/watch?v=yDAv_LpN00c" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://img.youtube.com/vi/yDAv_LpN00c/maxresdefault.jpg"
+            alt="Clique para assistir o vídeo sobre descarga glow"
+          />
+          <div class="play-btn">
+            <div class="play-arrow"></div>
+          </div>
+        </a>
+        <div class="video-label">▶ Clique para abrir no YouTube</div>
+      </div>
+    </section>
+
     <section id="projeto">
       <h2 class="section-title">Aplicação no meu projeto</h2>
       <p class="section-subtitle">
