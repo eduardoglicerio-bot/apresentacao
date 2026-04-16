@@ -1,153 +1,768 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Descargas DC Glow</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descargas DC Glow | Apresentação</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0c1c33;
+      --card: rgba(255,255,255,0.06);
+      --line: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b3c4e4;
+      --accent: #49b6ff;
+      --accent2: #7bf0d4;
+      --accent3: #ffc857;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
 
-<style>
-body {
-  margin:0;
-  font-family:Arial;
-  background:#07111f;
-  color:white;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-.container {
-  width:90%;
-  margin:auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(73,182,255,0.18), transparent 28%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-h1,h2 {
-  color:#49b6ff;
-}
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.section {
-  margin:40px 0;
-}
+    header {
+      padding: 28px 0 12px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(7,17,31,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      z-index: 20;
+    }
 
-.video-wrapper img {
-  border-radius:12px;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
 
-.card {
-  background:#0c1c33;
-  padding:20px;
-  border-radius:12px;
-  margin:10px 0;
-}
-</style>
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      font-size: 1.05rem;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 34px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(73,182,255,0.12);
+      border: 1px solid rgba(73,182,255,0.35);
+      border-radius: 999px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -1px;
+    }
+
+    .nome-autor {
+      font-size: 20px;
+      color: var(--accent);
+      margin-top: 10px;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 0 0 24px;
+      max-width: 62ch;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #337bff);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      font-size: 1rem;
+      color: var(--accent2);
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      margin: 0 0 22px;
+      color: var(--muted);
+      max-width: 78ch;
+    }
+
+    .grid-3, .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3, .card h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .tag.blue { background: rgba(73,182,255,0.14); color: var(--accent); }
+    .tag.green { background: rgba(123,240,212,0.14); color: var(--accent2); }
+    .tag.gold { background: rgba(255,200,87,0.16); color: var(--accent3); }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .timeline-item strong {
+      color: var(--accent);
+      display: inline-block;
+      margin-top: 3px;
+    }
+
+    .figure-box {
+      background: linear-gradient(180deg, rgba(73,182,255,0.08), rgba(255,255,255,0.03));
+      border: 1px dashed rgba(73,182,255,0.35);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .figure-box p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .media-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .media-box img {
+      width: 100%;
+      max-width: 780px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .media-caption {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 12px;
+      font-size: 0.98rem;
+    }
+
+    .video-wrapper {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 420px;
+      display: block;
+    }
+
+    footer {
+      padding: 30px 0 60px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-box {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .avatar-box {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 50;
+      text-align: center;
+    }
+
+    .avatar-card {
+      background: rgba(10, 22, 40, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 14px;
+      width: 130px;
+      box-shadow: var(--shadow);
+    }
+
+    .avatar-face {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      background: radial-gradient(circle at 30% 30%, #6ed0ff, #2b5fff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    .avatar-btn {
+      width: 100%;
+      padding: 10px 8px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #337bff);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
+    .avatar-btn-stop {
+      width: 100%;
+      padding: 9px 8px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    @media (max-width: 920px) {
+      .hero, .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .video-wrapper iframe {
+        height: 240px;
+      }
+
+      .avatar-box {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .avatar-card {
+        width: 108px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Glow <span>Discharge</span> Study</div>
+        <div class="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#modelo">Modelo</a>
+          <a href="#metodo">Método</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#figuras">Figuras</a>
+          <a href="#video">Vídeo</a>
+          <a href="#projeto">Projeto</a>
+          <a href="#graficos">Gráficos</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Página em HTML para GitHub Pages</div>
+        <h1>A one-dimensional model of dc glow discharges</h1>
 
-<h1>A one-dimensional model of dc glow discharges</h1>
+        <div class="nome-autor">
+          Eduardo – Mestrado em Engenharia Elétrica (UFES)
+        </div>
 
-<p><strong>Eduardo – Mestrado em Engenharia Elétrica (UFES)</strong></p>
+        <p>
+          Uma página-resumo visual da sua apresentação, baseada no artigo sobre
+          modelagem unidimensional de descargas glow em corrente contínua entre
+          eletrodos paralelos. O foco aqui é explicar a ideia central, o modelo
+          físico, o método numérico e os principais resultados de forma clara e bonita.
+        </p>
 
-<p>
-Este trabalho apresenta um modelo físico para entender o comportamento do plasma
-em descargas glow DC.
-</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#sobre">Começar leitura</a>
+          <a class="btn btn-secondary" href="#resultados">Ver resultados</a>
+        </div>
+      </div>
 
-<!-- SOBRE -->
-<div class="section">
-<h2>Sobre</h2>
-<p>Estudo do comportamento do plasma entre eletrodos.</p>
-</div>
+      <div class="hero-card">
+        <h3>Resumo rápido</h3>
+        <ul>
+          <li>Modelo contínuo unidimensional para plasma de glow discharge DC.</li>
+          <li>Equações locais para elétrons, íons, energia eletrônica e campo elétrico.</li>
+          <li>Inclusão da inércia iônica e do ponto singular associado à velocidade do som iônica.</li>
+          <li>Resultados numéricos para argônio com estudo de parâmetros.</li>
+        </ul>
+      </div>
+    </section>
 
-<!-- MODELO -->
-<div class="section">
-<h2>Modelo</h2>
-<ul>
-<li>Densidade de elétrons</li>
-<li>Densidade de íons</li>
-<li>Campo elétrico</li>
-<li>Temperatura eletrônica</li>
-</ul>
-</div>
+    <section id="sobre">
+      <h2 class="section-title">Sobre o artigo</h2>
+      <p class="section-subtitle">
+        O trabalho apresenta um modelo físico para descrever como grandezas do plasma
+        variam ao longo do espaço entre dois eletrodos paralelos, incluindo densidade
+        de partículas, fluxo, temperatura eletrônica e campo elétrico.
+      </p>
 
-<!-- RESULTADOS -->
-<div class="section">
-<h2>Resultados</h2>
-<p>O modelo descreve regiões do plasma e comportamento físico.</p>
-</div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="tag blue">Problema</div>
+          <h3>O que se quer entender</h3>
+          <p>
+            Como os parâmetros do plasma mudam ao longo da descarga glow DC,
+            especialmente na bainha catódica e na região quase neutra do plasma.
+          </p>
+        </article>
 
-<!-- FIGURA -->
-<div class="section">
-<h2>Figura</h2>
-<img src="figura1.png" width="100%">
-</div>
+        <article class="card">
+          <div class="tag green">Contribuição</div>
+          <h3>O diferencial</h3>
+          <p>
+            O modelo inclui a inércia no balanço de momento dos íons e também as perdas
+            de energia dos elétrons por excitação, pontos importantes para a física da descarga.
+          </p>
+        </article>
 
-<!-- VIDEO MELHORADO -->
-<div class="section">
+        <article class="card">
+          <div class="tag gold">Contexto</div>
+          <h3>Por que isso importa</h3>
+          <p>
+            Descargas de baixa pressão em AC e DC são relevantes em processamento de plasma
+            e microeletrônica, então entender sua física espacial é essencial.
+          </p>
+        </article>
+      </div>
+    </section>
 
-<h2>Visualização da descarga</h2>
+    <section id="modelo">
+      <h2 class="section-title">Estrutura do modelo</h2>
+      <p class="section-subtitle">
+        O artigo usa um conjunto de equações locais de balanço para elétrons e íons,
+        além da equação de Poisson para o campo elétrico e de uma equação de balanço
+        de energia eletrônica.
+      </p>
 
-<p>
-O vídeo abaixo ajuda a visualizar o fenômeno físico descrito pelo modelo.
-</p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Hipóteses principais</h3>
+          <ul>
+            <li>Eletrodos paralelos com problema reduzido a uma dimensão.</li>
+            <li>Gás fracamente ionizado.</li>
+            <li>Sem íons negativos no modelo base.</li>
+            <li>Coeficientes dependentes do campo elétrico local.</li>
+            <li>Emissão secundária de elétrons apenas no cátodo.</li>
+          </ul>
+        </article>
 
-<p style="font-weight:bold;">
-▶ Vídeo ilustrativo (3 min) — veja apenas um trecho
-</p>
+        <article class="card">
+          <h3>Grandezas estudadas</h3>
+          <ul>
+            <li>Densidade de elétrons</li>
+            <li>Densidade de íons</li>
+            <li>Fluxo de elétrons</li>
+            <li>Fluxo de íons</li>
+            <li>Fluxo total de energia eletrônica</li>
+            <li>Temperatura eletrônica</li>
+            <li>Campo elétrico</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <h2 class="section-title">Método numérico</h2>
+      <p class="section-subtitle">
+        Para resolver o sistema de equações diferenciais não lineares, os autores usam
+        o método HEMODES, que consegue tratar problemas com pontos singulares removíveis.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>Etapa 1</strong>
+          <div>
+            <h4>Discretização da malha</h4>
+            <p>
+              O domínio espacial entre os eletrodos é dividido em pontos e as equações diferenciais
+              são convertidas em equações de diferenças finitas.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Etapa 2</strong>
+          <div>
+            <h4>Iteração numérica</h4>
+            <p>
+              O sistema é resolvido iterativamente por uma técnica do tipo Newton-Raphson,
+              atualizando a solução até atingir a tolerância desejada.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <strong>Etapa 3</strong>
+          <div>
+            <h4>Tratamento da singularidade</h4>
+            <p>
+              Quando a velocidade dos íons alcança a velocidade do som iônica, surge um ponto singular
+              que é tratado por uma condição interna adicional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados">
+      <h2 class="section-title">Principais resultados</h2>
+      <p class="section-subtitle">
+        Os resultados numéricos reproduzem características típicas da descarga glow,
+        como a região de queda catódica e a região quase neutra do plasma, com estudos em argônio.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Ion sound</h3>
+          <p>
+            A inclusão da inércia dos íons altera os perfis espaciais e melhora o tratamento físico
+            da dinâmica iônica, especialmente na vizinhança do ponto crítico associado à velocidade do som iônica.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Excitação eletrônica</h3>
+          <p>
+            As perdas de energia por excitação têm forte impacto na energia e na temperatura eletrônica,
+            sendo essenciais para resultados mais realistas.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Variação de parâmetros</h3>
+          <p>
+            O estudo discute o efeito do coeficiente de emissão secundária, da densidade de corrente total
+            e da pressão do gás nos perfis de campo, densidade e temperatura.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="figuras">
+      <h2 class="section-title">Figuras do artigo</h2>
+      <p class="section-subtitle">
+        Aqui você pode destacar figuras importantes da apresentação e do artigo para facilitar a compreensão visual.
+      </p>
+
+      <div class="media-box">
+        <img src="figura1.png" alt="Figura principal do artigo">
+        <div class="media-caption">
+          Figura 1 — Substitua este arquivo por uma imagem extraída do artigo ou da sua apresentação.
+        </div>
+      </div>
+    </section>
+		<section id="video">
+  <h2 class="section-title">Visualização da descarga</h2>
+  <p class="section-subtitle">
+    Você pode incorporar um vídeo do YouTube para mostrar visualmente o fenômeno da descarga glow ou uma explicação complementar.
+  </p>
 
 <div class="video-wrapper">
-
-<a href="https://www.youtube.com/watch?v=yDAv_LpN00c&t=00s" target="_blank" style="position:relative; display:block;">
-
-<img src="https://img.youtube.com/vi/yDAv_LpN00c/maxresdefault.jpg" width="100%">
-
-<div style="
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-width:70px;
-height:70px;
-background:red;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-">
-<div style="
-border-left:25px solid white;
-border-top:15px solid transparent;
-border-bottom:15px solid transparent;
-margin-left:5px;
-"></div>
+  <a href="https://www.youtube.com/watch?v=yDAv_LpN00c" target="_blank" style="display:block; position:relative;">
+    <img 
+      src="https://img.youtube.com/vi/yDAv_LpN00c/maxresdefault.jpg" 
+      width="100%" 
+      style="border-radius:8px; cursor:pointer;"
+      alt="Clique para assistir o vídeo"
+    />
+    <!-- Botão play no centro -->
+    <div style="
+      position:absolute; top:50%; left:50%; 
+      transform:translate(-50%,-50%);
+      width:70px; height:70px; border-radius:50%;
+      background:rgba(255,0,0,0.85);
+      display:flex; align-items:center; justify-content:center;
+    ">
+      <div style="
+        width:0; height:0;
+        border-top:18px solid transparent;
+        border-bottom:18px solid transparent;
+        border-left:30px solid white;
+        margin-left:6px;
+      "></div>
+    </div>
+  </a>
 </div>
+  </section>
+    <section id="projeto">
+      <h2 class="section-title">Aplicação no meu projeto</h2>
+      <p class="section-subtitle">
+        Este estudo está sendo utilizado como base para meu projeto de mestrado,
+        focado na geração de espécies reativas, especialmente NOx, por descargas elétricas em plasma.
+      </p>
 
-</a>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Objetivo</h3>
+          <p>
+            Investigar a produção de óxidos de nitrogênio a partir do ar atmosférico
+            utilizando descargas elétricas e analisar sua possível aplicação em sistemas
+            de fertilização e processos sustentáveis.
+          </p>
+        </article>
 
-</div>
+        <article class="card">
+          <h3>Metodologia</h3>
+          <p>
+            Combinação de modelagem teórica, interpretação de artigos, simulação em Python
+            e organização experimental para avaliar custo, eficiência e viabilidade do sistema.
+          </p>
+        </article>
+      </div>
+    </section>
 
-<p style="text-align:center;color:gray;">
-Clique para abrir o vídeo já na parte mais importante (20s)
-</p>
+    <section id="graficos">
+      <h2 class="section-title">Gráficos e resultados do Colab</h2>
+      <p class="section-subtitle">
+        Esta área pode ser usada para inserir os gráficos gerados nas suas simulações e comparações de cenários.
+      </p>
 
-</div>
+      <div class="media-box">
+        <img src="grafico1.png" alt="Gráfico gerado no Colab">
+        <div class="media-caption">
+          Gráfico 1 — Substitua este arquivo por um gráfico exportado do seu Colab.
+        </div>
+      </div>
+    </section>
 
-<!-- PROJETO -->
-<div class="section">
-<h2>Meu Projeto</h2>
-<ul>
-<li>Produção de NOx</li>
-<li>Descarga elétrica no ar</li>
-<li>Aplicação em fertilizantes</li>
-</ul>
-</div>
+    <section id="aplicacoes">
+      <h2 class="section-title">Aplicações e conexão com seu projeto</h2>
+      <p class="section-subtitle">
+        Mesmo sendo um artigo sobre glow discharge DC, a lógica física ajuda a entender como modelar
+        perfis espaciais de plasma, transporte de partículas e balanço de energia, o que conversa com
+        seus interesses em descargas, plasma e espécies químicas reativas.
+      </p>
 
-<!-- GRAFICO -->
-<div class="section">
-<h2>Gráficos</h2>
-<img src="grafico1.png" width="100%">
-</div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>O que esta página já faz</h3>
+          <ul>
+            <li>Apresenta o tema de forma clara</li>
+            <li>Resume seções do artigo</li>
+            <li>Organiza conteúdo para leitura rápida</li>
+            <li>Integra figuras, vídeo e gráficos</li>
+            <li>Está pronta para ser evoluída</li>
+          </ul>
+        </article>
 
-</div>
+        <article class="card">
+          <h3>O que você pode adicionar depois</h3>
+          <ul>
+            <li>PDF do artigo</li>
+            <li>Mais imagens da sua apresentação</li>
+            <li>Mais gráficos do Colab</li>
+            <li>Seção sobre o experimento com plasma e NOx</li>
+            <li>Simulações interativas e avatar avançado</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
 
+  <div class="avatar-box">
+    <div class="avatar-card">
+      <div class="avatar-face">🤖</div>
+      <button class="avatar-btn" onclick="falarApresentacao()">Ouvir</button>
+      <button class="avatar-btn-stop" onclick="pararFala()">Parar</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-box">
+      Página demonstrativa em HTML preparada para publicação no GitHub Pages.
+    </div>
+  </footer>
+
+  <script>
+    function falarApresentacao() {
+      speechSynthesis.cancel();
+
+      const texto = `
+      Olá. Seja bem-vindo à apresentação.
+      Este trabalho aborda um modelo unidimensional de descargas glow em corrente contínua.
+      O estudo descreve o comportamento espacial do plasma entre eletrodos paralelos.
+      São analisadas grandezas como densidade de elétrons, densidade de íons,
+      fluxo de partículas, temperatura eletrônica e campo elétrico.
+      O modelo também considera a inércia dos íons e o tratamento do ponto singular
+      associado à velocidade do som iônica.
+      Os resultados numéricos para argônio mostram aspectos importantes da descarga glow
+      e ajudam na compreensão física de sistemas de plasma.
+      `;
+
+      const msg = new SpeechSynthesisUtterance(texto);
+      msg.lang = "pt-BR";
+      msg.rate = 0.95;
+      msg.pitch = 1.0;
+      msg.volume = 1.0;
+
+      speechSynthesis.speak(msg);
+    }
+
+    function pararFala() {
+      speechSynthesis.cancel();
+    }
+  </script>
 </body>
 </html>
